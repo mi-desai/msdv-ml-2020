@@ -1,15 +1,20 @@
 ## Machine Learning Assignment 3
 
-In this assignment, you will used an unsupervised learning method to cluster. Choose any one of the following three options for completing the assignment: 
+Assignment: Work with a set of images of and metadata on ~400 works of fine art from museum collections and galleries **to cluster them on metadata and/or image characteristics**. 
 
-### [Option 1](https://github.com/visualizedata/ml/tree/master/ML_assignment_3/option_1)
+Overview: I decided to work with the fine art clustering. I originally stuck with the original ordinal Bertin variables in the metadata but decided to add a few more. Since so many of the variables were Boolean variables, in Excel I did a find-and-replace on all Boolean True-False values to replace them with 0 and 1. The addition of these variables, I thought, would improve the groupings of the artworks. I also did this for spatial dimensions. 
 
-Work with the Amazon Fine Food Reviews dataset, consisting of 455,000 food reviews Amazon users left up to October 2012 **to create a recommendation engine for Amazon products**. [[Download Amazon.csv here](https://drive.google.com/open?id=0Bxpj6pLMNxkTMXBtRFAydXJPQ2s); must be logged into Google with your newschool.edu to access]
+After adding the features, I set to work on the k-means algorithm. The intertia / elbow plot showed an ideal clustering at around 12-15 clusters. I decided on 12 clusters, which did not result in a very high silhouette score, suggesting more work could be done on the features. However, I liked some of the clusters that were coming out of this group since they seemed to be grouping based on lines and edges. After some tinkering, I decided to stay with "init='random', n_init=200, max_iter=1000, tol=1e-10".
 
-### [Option 2](https://github.com/visualizedata/ml/tree/master/ML_assignment_3/option_2)
+### [Silhouette1](https://github.com/mi-desai/msdv-ml-2020/tree/master/art_clustering_final/silouette1.png)
 
-Work with a set of images of and metadata on ~400 works of fine art from museum collections and galleries **to cluster them on metadata and/or image characteristics**. 
+### [Silhouette2](https://github.com/mi-desai/msdv-ml-2020/tree/master/art_clustering_final/silhouette2.png)
 
-### [Option 3](https://github.com/visualizedata/ml/tree/master/ML_assignment_3/option_3)
+### [Silhouette3](https://github.com/mi-desai/msdv-ml-2020/tree/master/art_clustering_final/silhouette3.png)
 
-Work with data on food contamination **to cluster incident descriptions into broader categories**. 
+### [Silhouette4](https://github.com/mi-desai/msdv-ml-2020/tree/master/art_clustering_final/silhouette4.png)
+
+
+The results: 
+
+### [Results](https://github.com/mi-desai/msdv-ml-2020/tree/master/art_clustering_final/results.png)
